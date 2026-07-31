@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #fff8ec;
+  --color-ink: #1a1533;
+  --color-chenshu: #3e92f5;
+  --color-yiwen: #ffc93c;
+  --color-qishi: #3dd68c;
+  --color-gantan: #ff6b4a;
+  --color-correct: #00e5ff;
+  --font-display: "Fredoka", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-body: "Nunito", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+}
+
+@keyframes pulse-correct {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+.zone-correct-flash {
+  animation: pulse-correct 0.6s ease-in-out 2;
+}
