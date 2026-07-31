@@ -10,14 +10,16 @@
 
 ## 🚦 目前状态
 
-- **尚未部署到 Vercel，尚未上架到 kongsi-idea Hub**——按计划，要先让老师在真实摄像头+多人环境下本机测试过，确认没问题才进入部署/上架流程。
-- 还没有实机（真实摄像头+多人站位）测试过，逻辑是照设计写的，姿态判定的实际准确度未知。
+- **已上线**：https://tahun1-bc-juxing.vercel.app （GitHub `kongsi-idea/tahun1-bc-juxing`，Vercel team `kongsi-idea`）
+- 已登记进 `kongsi-idea/app.js` 的 `TOOLS`（含 `prep` 摄像头/4-8人/活动空间/光线需求，`teachingMode` 新增「摄像头体感互动」分类），Hub 已重新部署且手动 `vercel alias set` 校正过 `kongsi-idea.vercel.app` 指向（这个专案有已知的别名不自动更新踩坑，见 memory `eduneo-hub-versioning-and-creator-rules`）。
+- 老师本机实测过摄像头启动、3人以上侦测（换 CPU delegate + 降低置信度门槛后确认正常）、10 题流程、声音效果，确认无误后才走部署流程。
+- `published-tools-coverage.md` 已加一行，标注「马来文单元名还没核对官方 DSKP PDF，暂缓收录进 `dskp-index.js`」。
 
 ## ➡️ 下一步
 
-1. 老师本机 `npm run dev` 实测：摄像头启动、侦测人数是否准确、左右分区判定（含中线缓冲死区）是否符合预期、10 题流程走完、排行榜跨浏览器/重开验证。
-2. 视实测结果决定要不要加开局校准确认步骤（v1 刻意先不做）。
-3. 确认没问题后：截图 → 独立 Git 仓库 → Vercel 部署 → 回 `kongsi-idea/app.js` 的 `TOOLS` 登记（含 `prep` 字段注明摄像头/4-8人/活动空间/光线需求，`teachingMode` 建议新增「摄像头体感互动」分类）→ 更新 `published-tools-coverage.md` → `npm run status:sync`。
+1. 视实际课堂使用效果决定要不要加开局校准确认步骤（v1 刻意先不做）。
+2. 有空时查证 5.4/5.4.1 的官方马来文用词（对照 SK 版 DSKP PDF），核对过再补进 `kongsi-idea/data/dskp-index.js`，让「按学习目标找工具」也能搜到这个工具。
+3. 收集课堂实测反馈后，照 `agents.md` 版本规则升版本号+写 changelog。
 
 ## ⚠️ 注意事项
 
